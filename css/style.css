@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+:root {
+  --lightDark: #212936;
+  --dark: #141722;
+  --fontPrimary: #fff;
+  --green: #35bb78;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--fontPrimary);
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: var(--lightDark);
+}
+
+/* nav start */
+.nav {
+  background-color: var(--dark);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.nav img {
+  width: 200px;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav .avatar img {
+  width: 30px;
+  height: 30px;
+}
+
+.avatar p {
+  margin-left: 10px;
+  font-size: 14px;
+  color: var(--white);
+}
+
+/* Main body with grid start */
+.main {
+  display: grid;
+  grid-template-columns: 2.3fr 1fr;
+  grid-gap: 20px;
+  padding: 30px;
+}
+
+.flex {
+  display: flex;
+}
+
+.checkbox {
+  width: 40px;
+}
+
+.milestoneDetails img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 7px;
+  -webkit-transition: opacity 0.8s linear;
+  -moz-transition: opacity 0.8s linear;
+  transition: opacity 0.8s linear;
+}
+
+.title,
+.details {
+  margin: 10px auto;
+  padding: 5px 10px;
+}
+
+.milestones,
+.doneList {
+  background-color: var(--dark);
+  border-radius: 7px;
+  cursor: pointer;
+  max-height: 495px;
+  overflow: auto;
+}
+
+.doneList {
+  margin-top: 20px;
+}
+
+.module {
+  background-color: var(--dark);
+}
+
+.milestone,
+.module {
+  font-size: 14px;
+  color: var(--white);
+  margin: 10px;
+  padding: 10px;
+}
+
+.milestoneDetails {
+  font-size: 14px;
+  color: var(--white);
+}
+
+.border-b {
+  border-bottom: 1px solid rgb(31, 41, 55);
+}
+
+.hidden_panel {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.8s;
+  -moz-transition: max-height 0.8s;
+  transition: max-height 0.8s;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.show {
+  max-height: 400px;
+}
+
+.loaded {
+  opacity: 1;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 1024px) {
+  .main,
+  .todo {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 15px;
+    grid-gap: 10px;
+  }
+
+  .nav img {
+    width: 150px;
+  }
+
+  .nav .avatar img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .milestones,
+  .doneList {
+    height: fit-content;
+  }
+}

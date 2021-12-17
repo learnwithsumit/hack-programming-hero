@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/4518a9ec8f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>DOM Tutorial by LWS</title>
+  </head>
+
+  <body>
+    <!-- navbar  start -->
+    <nav class="nav">
+      <div class="brand-area container">
+        <a href="index.html" class="brand">
+          <img src="./images/logo.png" alt="programming hero Logo" />
+        </a>
+      </div>
+      <div class="avatar">
+        <img src="./images/lws.png" alt="LWS Logo" />
+        <p>LWS</p>
+      </div>
+    </nav>
+    <!-- navbar end start -->
+
+    <!-- main start -->
+    <section class="main">
+      <!-- course details start -->
+      <div class="milestoneDetails">
+        <img class="milestoneImage" src="./images/kv.png" alt="" />
+
+        <h1 class="title">Module title here</h1>
+        <p class="details">Module description here</p>
+      </div>
+      <!-- course details end -->
+
+      <!-- all milestones & modules start -->
+      <div>
+        <div class="milestones">
+          <div class="milestone border-b">
+            <div class="flex">
+              <div class="checkbox"><input type="checkbox" /></div>
+              <div>
+                <p>
+                  Milestone 1 name
+                  <span><i class="fas fa-chevron-down"></i></span>
+                </p>
+              </div>
+            </div>
+            <div class="hidden_panel">
+              <div class="module border-b">
+                <p>Module Name</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="doneList">
+          <!-- done list will load here -->
+        </div>
+      </div>
+      <!-- all milestones and modules end -->
+    </section>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
