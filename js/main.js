@@ -83,8 +83,32 @@ function markMileStone(checkbox, id) {
     doneList.appendChild(item);
   } else {
     // back to main list
-    milestonesList.appendChild(item);
-    doneList.removeChild(item);
+    // milestonesList.appendChild(item);
+    // doneList.removeChild(item);
+
+    const no = parseInt(item.id);
+    
+    for (let i = 1; i <= 14; i++) {
+      const children = milestonesList.childNodes;
+      const array = [...children];
+      const eachElementId = array.map(element => parseInt(element.id));
+
+
+      if (eachElementId.includes(no + i)) {
+        const nextDiv = array.find((node) => node.id - i == no);
+        milestonesList.insertBefore(item, milestonesList.childNodes[array.indexOf(nextDiv)]);
+        break;
+      }
+
+      else if (i!==14 && !eachElementId.includes(no + i)) {
+        continue;
+      }
+        
+      else if (i === 14 && !eachElementId.includes(no + i)){
+        milestonesList.appendChild(item);
+      }
+    
+    }
 
     // task - do the sorting
     // reload list
