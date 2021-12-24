@@ -88,7 +88,7 @@ function markMileStone(checkbox, id) {
 
     const no = parseInt(item.id);
     
-    for (let i = 1; i <= 14; i++) {
+    for (let i = 1; i <= milestonesData.length; i++) {
       const children = milestonesList.childNodes;
       const array = [...children];
       const eachElementId = array.map(element => parseInt(element.id));
