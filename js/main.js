@@ -79,7 +79,6 @@ function markMileStone(checkbox, id) {
 
   if (checkbox.checked) {
     // mark as done
-    milestonesList.removeChild(item);
     doneList.appendChild(item);
   } else {
         // my solution:
@@ -87,12 +86,7 @@ function markMileStone(checkbox, id) {
       const prevItem = document.getElementById(id - 1);
       prevItem.insertAdjacentElement("afterend", item);
     } else {
-      // back to main list
       milestonesList.appendChild(item);
-      doneList.removeChild(item);
-
-      // task - do the sorting
-      // reload list
       const prevItem = document.getElementById(id + 1);
       prevItem.insertAdjacentElement("beforebegin", item);
     }
