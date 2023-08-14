@@ -52,6 +52,15 @@ function openMilestone(milestoneElement, id) {
   // toggle current element
   currentPanel.classList.toggle("show");
 
+  // change the arrow according to the situation of Milestone
+  let arrow = milestoneElement.parentNode.getElementsByTagName("i");
+  if (currentPanel.classList[1] === "show") {
+    arrow[0].classList.value = "fas fa-chevron-up";
+  } else {
+    setTimeout(() => {
+      arrow[0].classList.value = "fas fa-chevron-down";
+    }, 720);
+  }
   showMilestone(id);
 }
 
