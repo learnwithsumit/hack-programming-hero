@@ -8,8 +8,7 @@ function loadMilestones() {
     .map(function (milestone) {
       return `<div class="milestone border-b" id="${milestone._id}">
       <div class="flex">
-        <div class="checkbox"><input type="checkbox" onclick="markMileStone(this, ${
-          milestone._id
+        <div class="checkbox"><input type="checkbox" onclick="markMileStone(this, ${milestone._id
         })" /></div>
         <div onclick="openMilestone(this, ${milestone._id})">
           <p>
@@ -83,11 +82,33 @@ function markMileStone(checkbox, id) {
     doneList.appendChild(item);
   } else {
     // back to main list
-    milestonesList.appendChild(item);
     doneList.removeChild(item);
 
     // task - do the sorting
     // reload list
+    let length = milestonesData.length;
+
+    for (let i = 1; i <= length; i++) {
+      const array = [...milestonesList.children];
+      const elementId = array.map((element) => parseInt(element.id));
+      // console.log(array);
+      // console.log(elementId);
+
+      if (id === 14) {
+        milestonesList.appendChild(item);
+        break;
+      } else if (elementId.includes(id + i)) {
+        const nextDiv = array.find((node) => node.id - i === id);
+
+        milestonesList.insertBefore(
+          item,
+          milestonesList.childNodes[array.indexOf(nextDiv)]
+        );
+        break;
+      } else {
+        continue;
+      }
+    }
   }
 }
 
