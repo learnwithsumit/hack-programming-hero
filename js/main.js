@@ -95,7 +95,7 @@ function markMileStone(checkbox, id) {
       // console.log(array);
       // console.log(elementId);
 
-      if (id === 14) {
+      if (id === length - 1) {
         milestonesList.appendChild(item);
         break;
       } else if (elementId.includes(id + i)) {
